@@ -1,0 +1,43 @@
+nav {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav .logo{
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    left: 5%;
+}
+
+nav .sign{
+    display: flex;
+    column-gap: 20px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 10%;
+
+}
+
+nav .sign div:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+nav .sign span{
+    background-color: #E73A04;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 50px;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
+}

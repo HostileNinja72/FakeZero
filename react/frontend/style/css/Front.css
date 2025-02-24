@@ -1,0 +1,110 @@
+.full{
+    height: 70vh;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 7%;
+    /* flex-direction: column; */
+}
+
+.full .title{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    font-size: 30px;
+    row-gap: 20px;
+    position: relative;
+    bottom: 100px;
+}
+.full .title span{
+    color: #E73A04;
+}
+
+.full .p{
+    font-size: 15px;
+}
+
+.full .create{
+    background-color: #E73A04;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.full .create:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.full .enter{
+    background-color: #F9F9F9;
+    height: 70vh;
+    width: 35vw;
+    position: relative;
+    bottom: 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    justify-content: flex-end;
+    row-gap: 10px;
+    padding-bottom: 10px;
+}
+
+
+.full input{
+    border: none;
+    border-top: solid 1px black;
+    padding-top: 10px;
+    background-color: #F9F9F9;
+    width: 80%;
+    padding-bottom: 60%;
+    padding: 15px 0px 300px 20px;
+}
+
+.full .enter input::placeholder{
+    color: #9A9A9A;
+}
+
+.full .last{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.full .enter .verify{
+    border: none;
+    padding: 5px 20px 5px 20px;
+    background-color: #E73A04;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    width: 120px;
+    position: relative;
+    right: 15px;
+}
+
+.full .enter .verify img{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full .enter .verify:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
