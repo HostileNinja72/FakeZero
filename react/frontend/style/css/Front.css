@@ -112,11 +112,19 @@
     display: flex;
     justify-content: flex-end;
 }
+.full .enter .verify img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.full .enter .verify{
+.full .enter .verify {
     border: none;
-    padding: 5px 20px 5px 20px;
-    background-color: #E73A04;
+    padding: 5px 20px;
+    background: linear-gradient(90deg, #E73A04, #FF6A00, #FF9800);
+    background-size: 300% 300%;
     color: white;
     border-radius: 20px;
     display: flex;
@@ -126,20 +134,29 @@
     width: 120px;
     position: relative;
     right: 15px;
+    transition: all 0.4s ease-in-out;
 }
 
-.full .enter .verify img{
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.full .enter .verify:hover{
+.full .enter .verify:hover {
     cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
+    filter: brightness(1.2);
+    /* Slight glow effect */
+    animation: gradientAnimation 3s infinite linear;
+    /* Animation starts only on hover */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .full .last {
@@ -156,4 +173,9 @@
     font-size: 13px;
     color: #727272;
     font-weight: 400;
+    transition: color 0.3s ease-in-out;
+}
+
+.full .char-limit.exceeded {
+    color: red;
 }

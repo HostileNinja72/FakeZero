@@ -23,10 +23,12 @@ export default function Front() {
                     className="ph"
                     placeholder="Paste your text"
                     value={text}
-                    onChange={(e) => setText(e.target.value.slice(0, maxLength))}
+                    onChange={(e) => setText(e.target.value)}
                 ></textarea>
                 <div className="last">
-                    <div className="char-limit">{text.length} / {maxLength} characters </div>
+                    <div className={`char-limit ${text.length > maxLength ? "exceeded" : ""}`}>
+                        {text.length} / {maxLength} characters 
+                    </div>
                     <div className="verify">
                         <div>Verify</div>
                         <div>
