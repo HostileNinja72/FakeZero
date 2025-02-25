@@ -12,18 +12,18 @@ services:
     networks:
       - mynetworks
 
-  django:
-    build: django
-    image: django-image
-    container_name: django-container
-    ports:
-      - "8000:8000"
-    volumes:
-      - django-volume:/home/env/backend
-    command: bash -c "python3 manage.py runserver 0.0.0.0:8000"
-    restart: always
-    networks:
-      - mynetworks
+  # django:
+  #   build: django
+  #   image: django-image
+  #   container_name: django-container
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - django-volume:/home/env/backend
+  #   command: bash -c "python3 manage.py runserver 0.0.0.0:8000"
+  #   restart: always
+  #   networks:
+  #     - mynetworks
       
 volumes:
   react-volume:

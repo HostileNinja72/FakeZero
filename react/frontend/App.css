@@ -1,13 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Konkhmer+Sleokchher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;600;700;900&display=swap');
 
-*{
+* {
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   font-family: 'Konkhmer Sleokchher', sans-serif;
-  }
-  
-  body{
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Konkhmer Sleokchher', sans-serif;
+
 }
+
+/* .inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  /* Use 600, 700, or 900 for different levels of bold 
+  font-style: normal;
+} */
