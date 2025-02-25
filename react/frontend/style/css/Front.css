@@ -15,7 +15,7 @@
     font-size: 30px;
     row-gap: 20px;
     position: relative;
-    bottom: 100px;
+    top: 10px
 }
 .full .title span{
     color: #E73A04;
@@ -65,11 +65,11 @@
     color: white;
 }
 .full .enter {
-    background-color: #F9F9F9;
+    background-color: #FFFFFF;
     height: 70vh;
     width: 35vw;
     position: relative;
-    bottom: 20px;
+    top: 90px;
     border: none;
     border-radius: 20px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.25);
@@ -80,6 +80,8 @@
     row-gap: 10px;
     padding-bottom: 15px;
     transition: box-shadow 0.3s ease-in-out;
+
+
 }
 
 .full .enter:hover {
@@ -90,10 +92,10 @@
     border: none;
     border-top: solid 0.5px #C0C0C0;
     padding-top: 10px;
-    background-color: #F9F9F9;
+    background-color: #FFFFFF;
     width: 100%;
     padding-bottom: 60%;
-    padding: 15px 0px 300px 20px;
+    padding: 15px 30px 300px 30px;
     outline: none;
     resize: none;
 }
@@ -140,9 +142,7 @@
 .full .enter .verify:hover {
     cursor: pointer;
     filter: brightness(1.2);
-    /* Slight glow effect */
     animation: gradientAnimation 3s infinite linear;
-    /* Animation starts only on hover */
 }
 
 @keyframes gradientAnimation {
@@ -178,4 +178,56 @@
 
 .full .char-limit.exceeded {
     color: red;
+}
+
+
+.input-header {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    padding-top: 10px;
+ 
+}
+
+
+.check-title {
+
+    line-height: 24px;
+    letter-spacing: .3px;
+    word-wrap: break-word;
+    color: #3B3A3B;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.example-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.example-text {
+    font-size: 14px;
+    color: #727272;
+}
+
+
+.generate-btn {
+    background-color: transparent;
+    color: #3B3A3B;
+    font-size: 14px;
+    padding: 7px 15px;
+    border-radius: 8px;
+    border: 2px solid #7a797a;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.generate-btn:hover {
+    background-color: #7a797a;
+    color: white;
 }

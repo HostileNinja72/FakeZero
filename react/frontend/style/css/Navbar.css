@@ -1,5 +1,4 @@
-/* General Navbar Styling */
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -15,28 +14,21 @@
     z-index: 1000;
 }
 
-/* Ensure Front Starts Below Navbar */
-.page-content {
-    margin-top: 200px;
-    /* Adjust based on navbar height */
-}
 
-/* Logo Styling */
-/* Logo Styling */
 .nav-logo img {
     width: 190px;
-    /* Made the logo smaller */
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     margin-top: 10px;
-    /* Adds space from the top */
+
 }
 
 .nav-logo img:hover {
     transform: scale(1.05);
 }
-/* Sign-in/Sign-up Styling */
+
+/* Sign-in/Sign-up container */
 .nav-sign {
     display: flex;
     gap: 25px;
@@ -50,13 +42,11 @@
     cursor: pointer;
     color: #333;
     transition: color 0.3s ease-in-out;
-
 }
 
 .sign-up:hover {
     color: #E73A04;
     font-weight: bold;
-    
 }
 
 /* Sign-In Button */
@@ -85,6 +75,7 @@
 
     .nav-logo img {
         width: 120px;
+        margin-top: 5px;
     }
 
     .nav-sign {
@@ -96,3 +87,12 @@
         padding: 10px 20px;
     }
 }
+
+
+.page-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    background-color: #F4F4F7;
+
+}
+
