@@ -4,6 +4,10 @@ import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
+  useEffect(() => {
+    document.title = "FakeZero"; 
+  }, []);
+
 
   return (
     <Routes>

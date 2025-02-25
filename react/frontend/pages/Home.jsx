@@ -1,14 +1,15 @@
-import Navbar from "../components/Navbar"
-import Front from "../components/Front"
-import { Element } from 'react-scroll';
+import Navbar from "../components/Navbar";
+import Front from "../components/Front";
 
-function Home()
-{
+function Home() {
     return (
         <div>
-        <Navbar />
-        <Front/>
-        </div>);
-};
+            <Navbar />
+            <div className="page-content">
+                <Front />
+            </div>
+        </div>
+    );
+}
 
 export default Home;
