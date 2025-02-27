@@ -1,0 +1,20 @@
+# Django and REST Framework
+django
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+
+# Utilities
+python-dotenv
+asgiref
+PyJWT
+psycopg2-binary
+requests
+Pillow
+gunicorn
+
+
+transformers
+huggingface_hub
+idna
+urllib3

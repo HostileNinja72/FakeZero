@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   react:
     build: react
@@ -11,20 +13,23 @@ services:
     restart: always
     networks:
       - mynetworks
+    depends_on:
+      - django 
 
-  # django:
-  #   build: django
-  #   image: django-image
-  #   container_name: django-container
-  #   ports:
-  #     - "8000:8000"
-  #   volumes:
-  #     - django-volume:/home/env/backend
-  #   command: bash -c "python3 manage.py runserver 0.0.0.0:8000"
-  #   restart: always
-  #   networks:
-  #     - mynetworks
-      
+  django:
+    build: django
+    image: django-image
+    container_name: django-container
+    ports:
+      - "8000:8000"
+    volumes:
+      - django-volume:/home/env/backend
+      - ./django/backend/models:/home/env/backend/models  
+    command: python manage.py runserver 0.0.0.0:8000 
+    restart: always
+    networks:
+      - mynetworks
+
 volumes:
   react-volume:
     driver: local
@@ -32,7 +37,7 @@ volumes:
       type: none
       device: ${PWD}/react/frontend
       o: bind
-      
+
   django-volume:
     driver: local
     driver_opts:

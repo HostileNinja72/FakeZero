@@ -1,22 +1,61 @@
 import "../style/css/Front.css";
 import { useState } from "react";
+import axios from "axios";
 import verify from "../style/image/verify.png";
 
 export default function Front() {
     const [text, setText] = useState("");
+    const [result, setResult] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
     const maxLength = 300;
-
 
     const fakeNewsSamples = [
         "NASA Confirms Secret Alien Colony Discovered on the Dark Side of the Moon!",
         "Banks to Replace All Money with Digital Brain Chips by 2026!",
-        "Fast Food Chains Caught Using Lab-Grown Meat from Alien DNA!"
+        "Fast Food Chains Caught Using Lab-Grown Meat from Alien DNA!",
+        "New Study Finds That Drinking Coffee Can Permanently Alter Your DNA",
+        "Government to Implement Nationwide Social Media Shutdown on Weekends to Improve Mental Health",
+        "Major Banks Announce Plans to Remove ATMs by 2026, Moving to Fully Digital Transactions"
     ];
 
- 
     const generateFakeNews = () => {
         const randomIndex = Math.floor(Math.random() * fakeNewsSamples.length);
         setText(fakeNewsSamples[randomIndex]);
+    };
+
+    const analyzeText = async () => {
+        if (!text.trim()) {
+            setError("Please enter some text before verifying.");
+            return;
+        }
+
+        setLoading(true);
+        setError(null);
+        setResult(null);
+
+        console.log("🔄 Sending request to API...");
+
+        try {
+            const response = await axios.post("http://django:8000/api/analyze/", { text });
+
+
+            console.log("✅ API Response:", response.data);
+
+            setResult(response.data);
+        } catch (error) {
+            console.error("❌ Error analyzing text:", error);
+
+            // Check if response exists
+            if (error.response) {
+                console.log("❌ API Error Response:", error.response.data);
+                setError(error.response.data.error || "Error analyzing text.");
+            } else {
+                setError("Server unreachable. Make sure the backend is running.");
+            }
+        }
+
+        setLoading(false);
     };
 
     return (
@@ -51,13 +90,26 @@ export default function Front() {
                     <div className={`char-limit ${text.length > maxLength ? "exceeded" : ""}`}>
                         {text.length} / {maxLength} characters
                     </div>
-                    <div className="verify">
-                        <div>Verify</div>
+                    <div className="verify" onClick={analyzeText}>
+                        <div>{loading ? "Checking..." : "Verify"}</div>
                         <div>
                             <img className="play" src={verify} alt="logo" />
                         </div>
                     </div>
                 </div>
+
+                {/* Show error messages */}
+                {error && <div className="error"><p>❌ {error}</p></div>}
+
+                {/* Show results if available */}
+                {result && (
+                    <div className="result">
+                        <h3>Fake News Prediction: {result.fake_news.prediction}</h3>
+                        <p>Confidence: {JSON.stringify(result.fake_news.confidence)}</p>
+                        <h3>Category: {result.category.prediction}</h3>
+                        <p>Confidence: {JSON.stringify(result.category.confidence)}</p>
+                    </div>
+                )}
             </div>
         </div>
     );
